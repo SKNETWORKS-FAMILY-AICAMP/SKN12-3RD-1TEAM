@@ -4,10 +4,11 @@ import re
 import random
 import sys
 import os
-from agent.chatbot_agent import process_query, check_greeting
-
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_dir)
+sys.path.append(os.path.join(current_dir, 'src'))
+
+from llm import process_query, check_greeting
 
 # 페이지 설정
 st.set_page_config(page_title="🐶우리개 어디가?🐶", layout="wide")

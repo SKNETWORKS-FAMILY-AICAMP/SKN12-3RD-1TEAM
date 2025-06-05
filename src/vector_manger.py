@@ -29,7 +29,7 @@ def _initialize_device():
 _db_cache: Dict[str, FAISS] = {}
 category_to_db: Dict[str, str] = {
     "관광지": "faiss_place_kure",
-    "숙박":   "faiss_place_kure",
+    "숙박":   "faiss_pet_kure",
     "대중교통": "faiss_regular_kure",
 }
 

@@ -10,6 +10,7 @@ from weather import get_weather
 from typing import List, Dict, Any, Optional
 from langchain.output_parsers import StructuredOutputParser, ResponseSchema, CommaSeparatedListOutputParser
 import logging
+import requests
 from naver_map_utils import NaverMapUtils
 
 #-------------- LOAD -----------------
@@ -35,7 +36,20 @@ def ensure_db_loaded():
         db_pet = get_db("faiss_pet_kure")
     if db_place is None:
         db_place = get_db("faiss_place_kure")
+
 #------------------------------------- 
+
+def get_naver_map_link(place_name: str) -> str:
+    """
+    네이버 지도 링크 생성 래퍼 함수
+    
+    Args:
+        place_name (str): 장소 이름
+        
+    Returns:
+        str: 네이버 지도 링크
+    """
+    return NaverMapUtils.get_map_link(place_name)
 
 def get_category(query: str) -> List[str]:
     """

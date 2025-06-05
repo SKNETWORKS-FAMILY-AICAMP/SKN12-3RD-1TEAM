@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import sys
 import os
 from pprint import pprint
@@ -18,7 +15,7 @@ def test_weather_function():
     test_cities = ["속초", "속초시", "서울", "부산"]
     
     for city in test_cities:
-        print(f"\n🌤️  {city} 날씨 조회 중...")
+        print(f"\n {city} 날씨 조회 중...")
         
         # 절대 경로로 JSON 파일 지정
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -32,9 +29,9 @@ def test_weather_function():
         
         # 오류 체크
         if 'error' in weather_result:
-            print(f"❌ 오류 발생: {weather_result['error']}")
+            print(f"오류 발생: {weather_result['error']}")
         else:
-            print(f"✅ 성공: {city}의 날씨 정보를 가져왔습니다")
+            print(f"성공: {city}의 날씨 정보를 가져왔습니다")
 
 def test_different_city_formats():
     """다양한 도시명 형태 테스트"""
@@ -47,13 +44,13 @@ def test_different_city_formats():
     json_path = os.path.join(current_dir, '../data', 'json', 'region_only_city_info.json')
     
     for city in city_variations:
-        print(f"\n🔍 '{city}' 검색 중...")
+        print(f"\n'{city}' 검색 중...")
         weather_result = get_weather(city, city_info_path=json_path)
         
         if 'error' in weather_result:
-            print(f"❌ 실패: {weather_result['error']}")
+            print(f" 실패: {weather_result['error']}")
         else:
-            print(f"✅ 성공: 인식된 지역 -> {weather_result.get('city', 'Unknown')}")
+            print(f"성공: 인식된 지역 -> {weather_result.get('city', 'Unknown')}")
             print(f"   기온: {weather_result.get('temperature', 'N/A')}°C")
             print(f"   습도: {weather_result.get('humidity', 'N/A')}%")
             print(f"   강수: {weather_result.get('precipitation_type', 'N/A')}")

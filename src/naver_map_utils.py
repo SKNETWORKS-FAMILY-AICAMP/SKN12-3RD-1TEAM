@@ -3,6 +3,7 @@ import urllib.parse
 import requests
 import logging
 
+# 향후 실제 데이터를 기반으로 장소를 선별할 예정으로 사전에 코드 작성 
 logger = logging.getLogger(__name__)
 
 class NaverMapUtils:

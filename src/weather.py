@@ -80,13 +80,18 @@ def get_base_date_time():
     return base_date, base_time
 
 # 날씨 정보 조회 함수
-def get_weather(city, city_info_path='../data/json/region_only_city_info.json'):
+def get_weather(city, city_info_path=None):
     """
     Returns weather info for a given region name (e.g. '서울', '부산', '수원', '기장').
     Finds the first key in city_info JSON that contains the input string if exact match is not found.
     Returns dict: {city, temperature, humidity, precipitation_type, wind_speed}
     If an error occurs, returns dict with 'error' key and message.
     """
+    # Use absolute path if not provided
+    if city_info_path is None:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        city_info_path = os.path.join(current_dir, '..', 'data', 'json', 'region_only_city_info.json')
+    
     try:
         with open(city_info_path, 'r', encoding='utf-8') as f:
             city_data = json.load(f)
