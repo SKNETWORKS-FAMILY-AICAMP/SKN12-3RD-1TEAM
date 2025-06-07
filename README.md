@@ -45,7 +45,7 @@ skn12기 3차 프로젝트 1팀
 
 ## 🧠 시스템 아키텍처
 
-> ![sa](./img/sa.png)
+> ![sa](./assets/sa.png)
 
 ---
 
@@ -99,6 +99,15 @@ skn12기 3차 프로젝트 1팀
 10. 최종 출력
 
 - Streamlit 앱을 통해 사용자에게 답변을 제공합니다.
+
+---
+
+## 사용된 API KEY 이름
+
+1. OPENAI_API_KEY : https://openai.com/api/
+2. OPEN_DATA (기상청\_단기예보 조회 서비스) : https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15084084
+3. TOUR_API_KEY (한국관광공사*반려동물*동반여행\_서비스) : https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15135102
+4. NAVER_CLIENT_KEY, NAVER_CLIENT_SECRET_KEY(네이버 API)
 
 ---
 
